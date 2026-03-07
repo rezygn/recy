@@ -154,7 +154,7 @@ const Order = () => {
           
           <button 
             id="connect-wallet-btn" 
-            className="connect-wallet-btn connect-wallet w-full bg-gradient-to-r from-teal to-cyan hover:from-cyan hover:to-teal text-white py-4 px-8 rounded-xl font-steelfish text-xl transition-all duration-300 hover:shadow-glow hover:-translate-y-1 flex items-center justify-center gap-3"
+            className="connect-wallet-btn connect-wallet interact-button w-full bg-gradient-to-r from-teal to-cyan hover:from-cyan hover:to-teal text-white py-4 px-8 rounded-xl font-steelfish text-xl transition-all duration-300 hover:shadow-glow hover:-translate-y-1 flex items-center justify-center gap-3"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/>
