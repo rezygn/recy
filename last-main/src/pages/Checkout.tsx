@@ -406,6 +406,15 @@ const Checkout = () => {
                       return;
                     }
 
+                    if (items.length === 0) {
+                      toast({
+                        variant: 'destructive',
+                        title: 'Empty Cart',
+                        description: 'Add something to your cart before checking out.',
+                      });
+                      return;
+                    }
+
                     if (!formData.firstName || !formData.lastName || !formData.address || !formData.city || !formData.postalCode) {
                       toast({
                         variant: 'destructive',
@@ -421,19 +430,18 @@ const Checkout = () => {
                       const expiresAt = new Date(Date.now() + 30 * 60 * 1000).toISOString();
                       
                       const orderData = {
-                        user_id: userId,
-                        // PASTE THIS:
-order_items: items.map(item => ({
-  name: item.name,
-  quantity: item.quantity,
-  size: item.size,
-  price: item.price,
-  image: item.image
-})),
-
-                        subtotal: subtotal,
-                        shipping: shipping,
-                        total: total,
+                        // user_id must match the authenticated user or the RLS policy will reject the insert
+                        user_id: userId!,
+                        order_items: items.map(item => ({
+                          name: item.name,
+                          quantity: item.quantity,
+                          size: item.size,
+                          price: item.price,
+                          image: item.image,
+                        })),
+                        subtotal,
+                        shipping,
+                        total,
                         shipping_address: {
                           firstName: formData.firstName,
                           lastName: formData.lastName,
@@ -451,22 +459,27 @@ order_items: items.map(item => ({
 
                       const { data, error } = await supabase
                         .from('orders')
-                        .insert(orderData)
+                        .insert([orderData])
                         .select()
                         .single();
 
-                      if (error) throw error;
+                      if (error) {
+                        throw error;
+                      }
+
+                      if (!data) {
+                        throw new Error('no data returned from insert');
+                      }
 
                       // Navigate to order page within React app
                       clearCart();
-
                       navigate(`/order?id=${data.id}`);
-                    } catch (error) {
-                      console.error('Error creating order:', error);
+                    } catch (err: any) {
+                      console.error('Error creating order:', err);
                       toast({
                         variant: 'destructive',
                         title: 'Error',
-                        description: 'Failed to create order. Please try again.',
+                        description: err?.message || 'Failed to create order. Please try again.',
                       });
                     } finally {
                       setIsLoading(false);
