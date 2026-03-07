@@ -1,0 +1,1107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap');
+
+/* Steelfish Font Family */
+@font-face {
+  font-family: 'Steelfish';
+  src: url('/fonts/Steelfish_Rg.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Steelfish';
+  src: url('/fonts/Steelfish_Bd.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Steelfish';
+  src: url('/fonts/Steelfish_Eb.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors - QuantumLab Scientific Theme */
+    --background: 0 0% 100%;
+    --foreground: 210 40% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 40% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 40% 15%;
+
+    /* Primary - Deep Science Blue */
+    --primary: 210 100% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Ice Blue (liquid nitrogen) */
+    --secondary: 195 100% 97%;
+    --secondary-foreground: 210 40% 15%;
+
+    /* Muted */
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Accent - Cyan/Analytical */
+    --accent: 187 100% 42%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive/Danger */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Warning/Hazard */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Success/Emerald */
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 187 100% 42%;
+
+    --radius: 0.75rem;
+
+    /* Custom Scientific Colors */
+    --teal: 187 100% 42%;
+    --teal-dark: 187 100% 34%;
+    --teal-light: 187 60% 92%;
+    --cyan: 187 85% 53%;
+    --cyan-glow: 187 100% 65%;
+    --orange: 28 87% 55%;
+    --cream: 36 40% 98%;
+    --ice-blue: 195 100% 97%;
+    --lab-white: 0 0% 100%;
+    --deep-blue: 210 100% 40%;
+    --slate: 215 16% 47%;
+    
+    /* Glass Effect */
+    --glass-bg: 0 0% 100% / 0.85;
+    --glass-border: 187 100% 42% / 0.4;
+    --glass-glow: 187 100% 42% / 0.2;
+
+    /* Sidebar */
+    --sidebar-background: 195 100% 99%;
+    --sidebar-foreground: 210 40% 20%;
+    --sidebar-primary: 187 100% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 195 100% 97%;
+    --sidebar-accent-foreground: 210 40% 15%;
+    --sidebar-border: 210 20% 91%;
+    --sidebar-ring: 187 100% 42%;
+
+    /* Enhanced Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(210 40% 15% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(210 40% 15% / 0.1), 0 2px 4px -2px hsl(210 40% 15% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(210 40% 15% / 0.1), 0 4px 6px -4px hsl(210 40% 15% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(210 40% 15% / 0.1), 0 8px 10px -6px hsl(210 40% 15% / 0.1);
+    --shadow-glow: 0 0 30px hsl(187 100% 42% / 0.4), 0 0 60px hsl(187 100% 42% / 0.2);
+    --shadow-glow-intense: 0 0 40px hsl(187 100% 42% / 0.6), 0 0 80px hsl(187 100% 42% / 0.3), 0 0 120px hsl(187 100% 42% / 0.1);
+    --shadow-royal: 
+      0 4px 30px hsl(187 100% 42% / 0.25), 
+      0 0 50px hsl(187 100% 60% / 0.15), 
+      inset 0 1px 0 hsl(0 0% 100% / 0.6),
+      inset 0 -1px 0 hsl(187 100% 42% / 0.15);
+    --shadow-royal-intense:
+      0 8px 40px hsl(187 100% 42% / 0.35),
+      0 0 80px hsl(187 100% 60% / 0.2),
+      0 0 120px hsl(210 100% 50% / 0.1),
+      inset 0 1px 0 hsl(0 0% 100% / 0.8),
+      inset 0 -1px 0 hsl(187 100% 42% / 0.2);
+  }
+
+  .dark {
+    --background: 210 35% 6%;
+    --foreground: 210 10% 95%;
+
+    --card: 210 35% 10%;
+    --card-foreground: 210 10% 95%;
+
+    --popover: 210 35% 10%;
+    --popover-foreground: 210 10% 95%;
+
+    --primary: 187 100% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 35% 14%;
+    --secondary-foreground: 210 10% 95%;
+
+    --muted: 210 35% 16%;
+    --muted-foreground: 210 12% 60%;
+
+    --accent: 187 100% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 35% 18%;
+    --input: 210 35% 18%;
+    --ring: 187 100% 45%;
+
+    --glass-bg: 210 35% 10% / 0.9;
+    --glass-border: 187 100% 45% / 0.4;
+    --glass-glow: 187 100% 45% / 0.2;
+
+    --sidebar-background: 210 35% 8%;
+    --sidebar-foreground: 210 10% 90%;
+    --sidebar-primary: 187 100% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 35% 12%;
+    --sidebar-accent-foreground: 210 10% 95%;
+    --sidebar-border: 210 35% 16%;
+    --sidebar-ring: 187 100% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Scientific Gradients */
+  .gradient-teal {
+    background: linear-gradient(135deg, hsl(var(--teal)) 0%, hsl(var(--cyan)) 100%);
+  }
+
+  .gradient-royal {
+    background: linear-gradient(135deg, hsl(var(--deep-blue)) 0%, hsl(var(--teal)) 50%, hsl(var(--cyan)) 100%);
+  }
+
+  .gradient-ice {
+    background: linear-gradient(180deg, hsl(var(--lab-white)) 0%, hsl(var(--ice-blue)) 50%, hsl(var(--teal-light)) 100%);
+  }
+
+  .gradient-hero {
+    background: linear-gradient(180deg, hsl(var(--cream)) 0%, hsl(var(--secondary)) 100%);
+  }
+
+  .gradient-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(var(--teal) / 0.1) 25%,
+      hsl(var(--cyan) / 0.3) 50%,
+      hsl(var(--teal) / 0.1) 75%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+  }
+
+  /* Shadow Utilities */
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-glow-intense {
+    box-shadow: var(--shadow-glow-intense);
+  }
+
+  .shadow-royal {
+    box-shadow: var(--shadow-royal);
+  }
+
+  .shadow-royal-intense {
+    box-shadow: var(--shadow-royal-intense);
+  }
+
+  /* Font Utilities */
+  .font-steelfish {
+    font-family: 'Steelfish', sans-serif;
+  }
+
+  .font-mono-scientific {
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  .font-source {
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  /* ========================================
+     GLASSMORPHISM CARDS
+     ======================================== */
+  
+  .glass-card {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-royal);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--cyan) / 0.5), transparent);
+  }
+
+  .glass-card-intense {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 2px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-royal-intense);
+  }
+
+  /* ========================================
+     SCIENTIFIC BORDERS
+     ======================================== */
+
+  .border-scientific {
+    position: relative;
+    border: 2px solid transparent;
+    background: 
+      linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
+      linear-gradient(135deg, hsl(var(--teal)), hsl(var(--cyan)), hsl(var(--deep-blue)), hsl(var(--teal))) border-box;
+    border-radius: var(--radius);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .border-scientific:hover {
+    box-shadow: 0 0 30px hsl(var(--teal) / 0.3);
+  }
+
+  .border-scientific::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, hsl(var(--teal) / 0.5), transparent 50%, hsl(var(--cyan) / 0.5));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .border-scientific:hover::before {
+    opacity: 1;
+  }
+
+  /* ========================================
+     ROYAL SCIENTIFIC FRAME - Premium Look
+     ======================================== */
+
+  .royal-frame {
+    position: relative;
+    border: 2px solid hsl(var(--teal) / 0.5);
+    border-radius: calc(var(--radius) + 6px);
+    background: linear-gradient(165deg, hsl(var(--card)) 0%, hsl(var(--ice-blue) / 0.7) 50%, hsl(var(--card)) 100%);
+    box-shadow: var(--shadow-royal);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+  }
+
+  .royal-frame::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: calc(var(--radius) + 12px);
+    padding: 2px;
+    background: linear-gradient(135deg, hsl(var(--teal) / 0.4), transparent 30%, transparent 70%, hsl(var(--cyan) / 0.4));
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask-composite: xor;
+    pointer-events: none;
+  }
+
+  .royal-frame::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(var(--cyan) / 0.8), hsl(var(--teal)), hsl(var(--cyan) / 0.8), transparent);
+    opacity: 0.6;
+  }
+
+  .royal-frame:hover {
+    box-shadow: var(--shadow-royal-intense);
+    border-color: hsl(var(--teal) / 0.7);
+    transform: translateY(-2px);
+  }
+
+  /* ========================================
+     HEXAGON PATTERN BACKGROUND
+     ======================================== */
+
+  .hex-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%2300bcd4' fill-opacity='0.04' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Molecular Pattern */
+  .molecular-pattern {
+    background-image: 
+      radial-gradient(circle at 20% 30%, hsl(var(--teal) / 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, hsl(var(--cyan) / 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, hsl(var(--deep-blue) / 0.02) 0%, transparent 70%);
+  }
+
+  /* ========================================
+     ANIMATIONS
+     ======================================== */
+
+  .molecule-float {
+    animation: moleculeFloat 6s ease-in-out infinite;
+  }
+
+  @keyframes moleculeFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-10px) rotate(5deg); }
+    50% { transform: translateY(-5px) rotate(0deg); }
+    75% { transform: translateY(-15px) rotate(-5deg); }
+  }
+
+  /* Data Stream Animation */
+  .data-stream {
+    animation: dataStream 3s linear infinite;
+  }
+
+  @keyframes dataStream {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 0% 100%; }
+  }
+
+  /* Pulse Glow */
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 20px hsl(var(--teal) / 0.4); }
+    50% { box-shadow: 0 0 40px hsl(var(--teal) / 0.6), 0 0 60px hsl(var(--cyan) / 0.3); }
+  }
+
+  /* Interactive Glow */
+  .hover-glow {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hover-glow:hover {
+    box-shadow: 
+      0 0 30px hsl(var(--teal) / 0.5),
+      0 0 60px hsl(var(--cyan) / 0.25),
+      0 12px 40px hsl(var(--teal) / 0.2);
+    transform: translateY(-3px);
+  }
+
+  /* Shimmer Effect */
+  .shimmer-border {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer-border::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--teal) / 0.15),
+      hsl(var(--cyan) / 0.3),
+      hsl(var(--teal) / 0.15),
+      transparent
+    );
+    background-size: 200% 100%;
+    animation: shimmerBorder 3s ease-in-out infinite;
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  @keyframes shimmerBorder {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* Pulse Ring */
+  .pulse-ring {
+    position: relative;
+  }
+
+  .pulse-ring::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: inherit;
+    border: 2px solid hsl(var(--teal) / 0.5);
+    animation: pulseRing 2s ease-out infinite;
+  }
+
+  @keyframes pulseRing {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.08); opacity: 0; }
+  }
+
+  /* ========================================
+     CORNER DECORATIONS
+     ======================================== */
+
+  .corner-decor {
+    position: relative;
+  }
+
+  .corner-decor::before,
+  .corner-decor::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border: 2px solid hsl(var(--teal));
+    pointer-events: none;
+    opacity: 0.7;
+  }
+
+  .corner-decor::before {
+    top: -2px;
+    left: -2px;
+    border-right: none;
+    border-bottom: none;
+    border-top-left-radius: 10px;
+  }
+
+  .corner-decor::after {
+    bottom: -2px;
+    right: -2px;
+    border-left: none;
+    border-top: none;
+    border-bottom-right-radius: 10px;
+  }
+
+  /* Four Corner Decoration */
+  .four-corners {
+    position: relative;
+  }
+
+  .four-corners .corner {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid hsl(var(--teal) / 0.6);
+    transition: all 0.3s ease;
+  }
+
+  .four-corners:hover .corner {
+    border-color: hsl(var(--teal));
+    width: 20px;
+    height: 20px;
+  }
+
+  .four-corners .corner-tl {
+    top: 8px;
+    left: 8px;
+    border-right: none;
+    border-bottom: none;
+    border-top-left-radius: 6px;
+  }
+
+  .four-corners .corner-tr {
+    top: 8px;
+    right: 8px;
+    border-left: none;
+    border-bottom: none;
+    border-top-right-radius: 6px;
+  }
+
+  .four-corners .corner-bl {
+    bottom: 8px;
+    left: 8px;
+    border-right: none;
+    border-top: none;
+    border-bottom-left-radius: 6px;
+  }
+
+  .four-corners .corner-br {
+    bottom: 8px;
+    right: 8px;
+    border-left: none;
+    border-top: none;
+    border-bottom-right-radius: 6px;
+  }
+
+  /* ========================================
+     SCIENTIFIC DATA DISPLAY
+     ======================================== */
+
+  .data-label {
+    @apply text-xs uppercase tracking-widest text-muted-foreground font-medium;
+    letter-spacing: 0.15em;
+  }
+
+  .data-value {
+    @apply font-mono-scientific text-foreground font-medium;
+  }
+
+  .cas-number {
+    @apply font-mono-scientific text-sm bg-secondary/50 px-2 py-1 rounded-md border border-border;
+  }
+
+  .molecular-formula {
+    @apply font-mono-scientific;
+  }
+
+  .molecular-formula sub {
+    @apply text-xs;
+  }
+
+  /* ========================================
+     HAZARD SYMBOLS
+     ======================================== */
+
+  .hazard-badge {
+    @apply inline-flex items-center gap-1 px-2 py-1 rounded-md text-xs font-semibold;
+  }
+
+  .hazard-flammable {
+    @apply bg-orange/10 text-orange border border-orange/30;
+  }
+
+  .hazard-toxic {
+    @apply bg-destructive/10 text-destructive border border-destructive/30;
+  }
+
+  .hazard-corrosive {
+    @apply bg-warning/10 text-warning border border-warning/30;
+  }
+
+  .hazard-health {
+    @apply bg-primary/10 text-primary border border-primary/30;
+  }
+
+  /* ========================================
+     PURITY BADGES
+     ======================================== */
+
+  .purity-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-bold;
+  }
+
+  .purity-99-9 {
+    background: linear-gradient(135deg, hsl(45 100% 50%), hsl(45 100% 60%));
+    @apply text-foreground shadow-sm;
+  }
+
+  .purity-99 {
+    @apply bg-accent text-accent-foreground;
+  }
+
+  .purity-95 {
+    @apply bg-primary text-primary-foreground;
+  }
+}
+
+/* ========================================
+   SNOW ANIMATION STYLES
+   ======================================== */
+
+.snowflake {
+  position: fixed;
+  top: -100px;
+  pointer-events: none;
+  z-index: 1;
+  animation: snowfall linear infinite;
+  will-change: transform;
+}
+
+.snowflake-image {
+  filter: drop-shadow(0 0 10px hsl(var(--cyan) / 0.5)) drop-shadow(0 0 20px hsl(var(--teal) / 0.3));
+  opacity: 0.6;
+}
+
+.snowflake-symbol {
+  color: hsl(var(--teal) / 0.4);
+  text-shadow: 0 0 8px hsl(var(--cyan) / 0.6), 0 0 16px hsl(var(--teal) / 0.3);
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(-100px) rotate(0deg) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(25vh) rotate(90deg) translateX(15px);
+  }
+  50% {
+    transform: translateY(50vh) rotate(180deg) translateX(-15px);
+  }
+  75% {
+    transform: translateY(75vh) rotate(270deg) translateX(15px);
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(105vh) rotate(360deg) translateX(0);
+    opacity: 0;
+  }
+}
+
+/* Local Float Animation for Snow Behind Boxes */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 0.1;
+  }
+  25% {
+    transform: translateY(-8px) rotate(45deg) scale(1.05);
+    opacity: 0.15;
+  }
+  50% {
+    transform: translateY(-4px) rotate(90deg) scale(1);
+    opacity: 0.12;
+  }
+  75% {
+    transform: translateY(-12px) rotate(135deg) scale(1.02);
+    opacity: 0.18;
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow ease-in-out infinite;
+}
+
+/* ========================================
+   INPUT STYLES - SCIENTIFIC
+   ======================================== */
+
+.input-scientific {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid hsl(var(--border));
+  background: hsl(var(--card));
+  position: relative;
+}
+
+.input-scientific:focus {
+  border-color: hsl(var(--teal));
+  box-shadow: 
+    0 0 0 4px hsl(var(--teal) / 0.15),
+    0 0 30px hsl(var(--teal) / 0.2),
+    inset 0 1px 2px hsl(var(--teal) / 0.05);
+  outline: none;
+}
+
+.input-scientific:hover:not(:focus) {
+  border-color: hsl(var(--teal) / 0.5);
+  box-shadow: 0 0 15px hsl(var(--teal) / 0.1);
+}
+
+/* Enhanced Input with glow */
+.input-glow {
+  @apply input-scientific;
+  background: linear-gradient(to bottom, hsl(var(--card)), hsl(var(--secondary) / 0.3));
+}
+
+.input-glow:focus {
+  background: linear-gradient(to bottom, hsl(var(--card)), hsl(var(--ice-blue)));
+}
+
+/* ========================================
+   CUSTOM SCROLLBAR
+   ======================================== */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, hsl(var(--teal) / 0.3), hsl(var(--cyan) / 0.3));
+  border-radius: 5px;
+  border: 2px solid hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, hsl(var(--teal) / 0.5), hsl(var(--cyan) / 0.5));
+}
+
+/* ========================================
+   CATEGORY ACCORDION STYLES
+   ======================================== */
+
+.category-item {
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+  padding-left: 12px;
+  position: relative;
+}
+
+.category-item:hover {
+  border-left-color: hsl(var(--teal));
+  background: linear-gradient(90deg, hsl(var(--teal) / 0.08), transparent);
+  padding-left: 18px;
+}
+
+.category-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: hsl(var(--teal));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.category-item:hover::before {
+  opacity: 1;
+}
+
+/* ========================================
+   CHECKBOX SCIENTIFIC STYLE
+   ======================================== */
+
+.checkbox-scientific {
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  border: 2px solid hsl(var(--teal));
+  border-radius: 8px;
+  background: linear-gradient(135deg, hsl(var(--card)), hsl(var(--secondary)));
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.checkbox-scientific:checked {
+  background: linear-gradient(135deg, hsl(var(--teal)), hsl(var(--cyan)));
+  border-color: hsl(var(--teal-dark));
+  box-shadow: 0 0 20px hsl(var(--teal) / 0.4);
+}
+
+.checkbox-scientific:checked::after {
+  content: '✓';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  text-shadow: 0 1px 2px hsl(0 0% 0% / 0.3);
+}
+
+.checkbox-scientific:hover {
+  box-shadow: 0 0 15px hsl(var(--teal) / 0.4);
+  transform: scale(1.05);
+}
+
+.checkbox-scientific:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px hsl(var(--teal) / 0.2), 0 0 20px hsl(var(--teal) / 0.3);
+}
+
+/* ========================================
+   RADIO SCIENTIFIC STYLE
+   ======================================== */
+
+.radio-scientific {
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  border: 2px solid hsl(var(--teal));
+  border-radius: 50%;
+  background: linear-gradient(135deg, hsl(var(--card)), hsl(var(--secondary)));
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.radio-scientific:checked {
+  border-color: hsl(var(--teal));
+  box-shadow: 0 0 20px hsl(var(--teal) / 0.4);
+}
+
+.radio-scientific:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(135deg, hsl(var(--teal)), hsl(var(--cyan)));
+  border-radius: 50%;
+  box-shadow: 0 0 10px hsl(var(--teal) / 0.5);
+}
+
+.radio-scientific:hover {
+  box-shadow: 0 0 15px hsl(var(--teal) / 0.4);
+  transform: scale(1.05);
+}
+
+.radio-scientific:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px hsl(var(--teal) / 0.2), 0 0 20px hsl(var(--teal) / 0.3);
+}
+
+/* ========================================
+   BUTTON VARIANTS
+   ======================================== */
+
+.btn-scientific {
+  @apply relative overflow-hidden;
+  background: linear-gradient(135deg, hsl(var(--teal)), hsl(var(--cyan)));
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-scientific::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, hsl(var(--cyan)), hsl(var(--teal)));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.btn-scientific:hover::before {
+  opacity: 1;
+}
+
+.btn-scientific:hover {
+  box-shadow: var(--shadow-glow-intense);
+  transform: translateY(-2px);
+}
+
+.btn-scientific span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Outline Scientific Button */
+.btn-outline-scientific {
+  @apply relative overflow-hidden;
+  background: transparent;
+  border: 2px solid hsl(var(--teal));
+  color: hsl(var(--teal));
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-outline-scientific::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, hsl(var(--teal)), hsl(var(--cyan)));
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-outline-scientific:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.btn-outline-scientific:hover {
+  color: white;
+  border-color: hsl(var(--teal));
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-outline-scientific span {
+  position: relative;
+  z-index: 1;
+}
+
+/* ========================================
+   CARD HOVER EFFECTS
+   ======================================== */
+
+.card-hover-lift {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover-lift:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-royal-intense);
+}
+
+/* Card with Border Animation */
+.card-border-animate {
+  position: relative;
+}
+
+.card-border-animate::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(
+    var(--border-angle, 0deg),
+    hsl(var(--teal)),
+    transparent 40%,
+    transparent 60%,
+    hsl(var(--cyan))
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  animation: borderRotate 4s linear infinite;
+}
+
+@keyframes borderRotate {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+@property --border-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* ========================================
+   SECTION DIVIDERS
+   ======================================== */
+
+.divider-dna {
+  height: 4px;
+  background: 
+    linear-gradient(90deg, transparent, hsl(var(--teal) / 0.3), hsl(var(--cyan) / 0.5), hsl(var(--teal) / 0.3), transparent),
+    repeating-linear-gradient(90deg, transparent, transparent 10px, hsl(var(--teal) / 0.2) 10px, hsl(var(--teal) / 0.2) 12px);
+  position: relative;
+}
+
+.divider-dna::before,
+.divider-dna::after {
+  content: '◆';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: hsl(var(--teal));
+  font-size: 12px;
+}
+
+.divider-dna::before {
+  left: 20%;
+}
+
+.divider-dna::after {
+  right: 20%;
+}
+
+/* ========================================
+   LOADING STATES
+   ======================================== */
+
+.loading-molecule {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.loading-molecule::before,
+.loading-molecule::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: hsl(var(--teal));
+}
+
+.loading-molecule::before {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: moleculeSpin 1.5s ease-in-out infinite;
+}
+
+.loading-molecule::after {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: moleculeSpin 1.5s ease-in-out infinite reverse;
+}
+
+@keyframes moleculeSpin {
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(0.6); }
+}
+
+/* ========================================
+   TOOLTIP SCIENTIFIC
+   ======================================== */
+
+.tooltip-scientific {
+  @apply absolute z-50 px-4 py-2 text-sm rounded-lg;
+  background: linear-gradient(135deg, hsl(var(--card)), hsl(var(--secondary)));
+  border: 1px solid hsl(var(--teal) / 0.3);
+  box-shadow: var(--shadow-royal);
+  color: hsl(var(--foreground));
+}
+
+.tooltip-scientific::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, hsl(var(--teal)), hsl(var(--cyan)));
+  border-radius: 2px 2px 0 0;
+}
+
+/* ========================================
+   MARQUEE ANIMATION
+   ======================================== */
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
