@@ -82,6 +82,7 @@ const Order = () => {
         return new Promise((resolve, reject) => {
           const script = document.createElement('script');
           script.charset = 'UTF-8';
+          script.type = 'text/javascript';
           script.src = src;
           script.async = false; // Load in order
           script.onload = () => resolve();
